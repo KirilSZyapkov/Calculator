@@ -4,6 +4,10 @@ var row = "";
 
 function input(arg) {
     let action = arg;
+    
+    if (document.getElementById('result').innerText === "Cannot divide by zero") {
+        document.getElementById('result').innerText = "";
+    }
 
     if (action !== "/" && action !== "*" && action !== "+" && action !== "-") {
         if (action === "C") {
