@@ -59,20 +59,24 @@ function input(arg) {
             alert("Enter a number!");
         } else {
             if (countOperation <= 0) {
-                if (token === "" && tokenTwo === "") {
+                if ((token === "" && tokenTwo === "") && colection.length !== 0) {
                     alert("Enter a number!");
                 } else if (tokenTwo !== "" && token === "") {
                     if (token === "" && (action !== "/" && action !== "*" && action !== "+" && action !== "-")) {
                         alert("Enter a number!");
                     } else {
-                        let curResult = document.getElementById('history').innerText;
-                        curResult = Number(curResult);
-                        colection.push(curResult);
-                        colection.push(action);
-                        row = colection.join("");
-                        document.getElementById('history').innerText = row;
-                        document.getElementById('result').innerText = "";
-                        countOperation++;
+                        if (token === "" && colection.length !== 0) {
+                            alert("Enter a number!");
+                        } else {
+                            let curResult = document.getElementById('history').innerText;
+                            curResult = Number(curResult);
+                            colection.push(curResult);
+                            colection.push(action);
+                            row = colection.join("");
+                            document.getElementById('history').innerText = row;
+                            document.getElementById('result').innerText = "";
+                            countOperation++;
+                        }
                     }
                 } else {
                     let num = document.getElementById('result').innerText;
